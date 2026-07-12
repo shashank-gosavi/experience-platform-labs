@@ -1,0 +1,9 @@
+{
+    "clientId": "your-client-id",
+    "clientSecret": "your-client-secret",
+    "redirectUri": "your-redirect-uri",
+    "accessTokenEndpoint": "https://www.linkedin.com/oauth/v2/accessToken",
+    "accessToken": "your-access-token",
+    "apiEndpoint": "https://api.linkedin.com/v2/me",
+    "personUrn": "urn:li:person:your-person-urn"
+}
