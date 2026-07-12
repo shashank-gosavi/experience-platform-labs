@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="LinkedIn Publisher"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+
+        <items jcr:primaryType="nt:unstructured">
+
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+
+                <items jcr:primaryType="nt:unstructured">
+
+                    <general
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Templates"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                        <items jcr:primaryType="nt:unstructured">
+
+                            <templates
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Templates">
+
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./templates">
+
+                                    <items jcr:primaryType="nt:unstructured">
+
+                                        <title
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Template Title"
+                                            name="./title"/>
+
+                                        <content
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                            fieldLabel="Template Content"
+                                            name="./content"/>
+
+                                    </items>
+
+                                </field>
+
+                            </templates>
+
+                        </items>
+
+                    </general>
+
+                    <imagesTab
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Images"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                        <items jcr:primaryType="nt:unstructured">
+
+                            <images
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Images">
+
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./images">
+
+                                    <items jcr:primaryType="nt:unstructured">
+
+                                        <image
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                            allowUpload="{Boolean}false"
+                                            autoStart="{Boolean}false"
+                                            class="cq-droptarget"
+                                            fieldLabel="DAM Image"
+                                            mimeTypes="[image/*]"
+                                            name="./image"
+                                            fileNameParameter="./fileName"
+                                            fileReferenceParameter="./image"/>
+
+                                    </items>
+
+                                </field>
+
+                            </images>
+
+                        </items>
+
+                    </imagesTab>
+
+                </items>
+
+            </tabs>
+
+        </items>
+
+    </content>
+
+</jcr:root>

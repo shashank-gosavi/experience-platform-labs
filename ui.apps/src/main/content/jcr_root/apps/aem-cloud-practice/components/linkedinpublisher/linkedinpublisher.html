@@ -1,0 +1,69 @@
+<sly
+    data-sly-use.model="com.project.core.models.LinkedInPublisher"/>
+
+<div class="linkedin-publisher">
+
+    <div class="linkedin-publisher__field">
+
+        <label>Select Template</label>
+
+        <select
+            id="linkedin-template-select"
+            class="linkedin-template-select">
+
+            <option value="">Choose Template</option>
+
+            <sly data-sly-list.template="${model.templates}">
+
+                <option
+                    value="${templateList.index}"
+                    data-content="${template.content @ context='html'}">
+
+                    ${template.title}
+
+                </option>
+
+            </sly>
+
+        </select>
+
+    </div>
+
+    <div
+        id="linkedin-content-preview"
+        class="linkedin-content-preview">
+
+        Select a template
+
+    </div>
+
+    <div
+        class="linkedin-image-gallery">
+
+        <sly data-sly-list.image="${model.images}">
+
+            <div
+                class="linkedin-image-wrapper">
+
+                ${image.image}
+
+            </div>
+
+        </sly>
+
+    </div>
+
+    <input
+        type="hidden"
+        id="selected-image"/>
+
+    <button
+        id="linkedin-submit-btn"
+        class="linkedin-submit-btn"
+        disabled>
+
+        Submit to LinkedIn
+
+    </button>
+
+</div>
