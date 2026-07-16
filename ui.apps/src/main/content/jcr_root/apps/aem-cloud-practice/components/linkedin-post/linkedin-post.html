@@ -1,0 +1,9 @@
+<sly data-sly-test.componentName="cmp-linkedin-post"/>
+<sly data-sly-use.linkedinPost="com.shashank.aem.cloud.core.models.LinkedinPost"/>
+<div class="cmp-linkedin-post hide"
+    id="${linkedinPost.id}"
+    data-current-page="${currentPage.contentResource.path}"
+    data-resource-path="${resource.path}">
+    <div data-sly-test="${wcmmode.edit}" class="authoring-component-label">${'Linkedin Post' @ i18n}</div>
+    <div data-sly-test="${wcmmode.edit}" class="authoring-component-outline"></div>
+</div>

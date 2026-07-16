@@ -1,0 +1,155 @@
+@import (reference) '~uiapps-clientlib-base/less/styles-base';
+@component-name: cmp-linkedin-post;
+
+.@{component-name} {
+    body.edit &,
+    body.xf-web-container & {
+        display: block;
+    }
+
+    &__mask {
+        align-items: flex-start;
+        background-color: rgba(0, 0, 0, 0.7);
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        left: 0;
+        overflow-y: auto;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 103;
+
+        .edit &,
+        .xf-web-container.edit & {
+            position: static;
+        }
+    }
+
+    &__modal {
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+
+        #reynoldsamerican-aem-mixins.breakpoint(@bp_mobile_max, {
+            height: auto;
+            max-height: 65vh;
+            top: 30vh;
+            width: auto;
+
+        });
+    }
+
+    &__close {
+        align-self: flex-end;
+        background-color: transparent;
+        border: none;
+        color: @c-white;
+        font-size: rem-calc(24px);
+        height: 24px;
+        margin: @spacing-small @spacing-small 0 0;
+        min-height: 24px;
+        padding: 0;
+        position: relative;
+        width: 24px;
+        z-index: 1;
+    }
+
+    &__background-picture {
+        height: 100%;
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    &__background-img {
+        left: 50%;
+        min-height: 100%;
+        min-width: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__foreground {
+        display: flex;
+        flex-direction: column;
+        // Need to keep below 100vh
+        // due to iOS Safari. It
+        // doesn't count the
+        // bottom toolbar in vh.
+        height: 85vh;
+        position: relative;
+
+        #reynoldsamerican-aem-mixins.breakpoint(@bp_mobile_max, {
+            height: auto;
+            max-height: 50vh;
+            max-width: 50vw;
+            width: auto;
+        });
+    }
+
+    &__content {
+        margin: 0 0 @spacing-xsmall @spacing-xsmall;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 0 @spacing-xsmall 0 0;
+        position: relative;
+
+        #reynoldsamerican-aem-mixins.breakpoint(@bp_mobile_max, {
+            height: auto;
+            max-height: ~"calc(65vh - 56px)";
+        });
+
+        .edit &,
+        body.xf-web-container {
+            display: block;
+            width: 800px;
+        }
+    }
+
+    .text {
+        position: relative;
+        z-index: 1;
+    }
+
+    &.hide {
+        display: none;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    &__thank-you {
+        align-items: center;
+        display: flex;
+        height: 90vw;
+        justify-content: center;
+        margin: 0 @spacing-xsmall @spacing-xsmall @spacing-xsmall;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 0;
+        position: relative;
+        width: 80vw;
+
+        #reynoldsamerican-aem-mixins.breakpoint(@bp_mobile_max, {
+            height: 500px;
+            max-height: ~"calc(65vh - 56px)";
+            width: 500px;
+        });
+
+        &.hide {
+            display: none;
+
+            .edit &,
+            body.xf-web-container {
+                display: block;
+                width: 800px;
+            }
+        }
+    }
+}
